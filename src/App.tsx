@@ -1,5 +1,11 @@
+import { FancyHeader } from "./components/FancyHeader";
+
 function App() {
-  return <div></div>;
+  return (
+    <>
+      <FancyHeader />
+    </>
+  );
 }
 
 export default App;
