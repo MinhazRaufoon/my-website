@@ -42,6 +42,8 @@
     flex-direction: column;
     --title-fontsize: 2rem;
     --content-padding: 1rem;
+    height: unset;
+    min-height: 100vh;
   }
 }
 
@@ -59,4 +61,18 @@
   grid-column: 2;
   grid-row: 2;
   font-size: var(--title-fontsize);
+}
+
+.actions {
+  grid-column: 3;
+  grid-row: 1/8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 900px) {
+  .actions {
+    flex-direction: row;
+  }
 }
