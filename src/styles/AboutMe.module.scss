@@ -1,0 +1,35 @@
+.container {
+}
+
+.welcomeDetails {
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    margin-bottom: 2rem;
+  }
+
+  .buttonSet {
+    margin-top: 1rem;
+
+    button {
+      border: none;
+    }
+
+    button:nth-child(1) {
+      background-color: #b2ddb7;
+
+      &:hover {
+        background-color: greenyellow;
+      }
+    }
+
+    button:nth-child(2) {
+      background-color: #c5aac8;
+
+      &:hover {
+        background-color: blueviolet;
+      }
+    }
+  }
+}
