@@ -5,13 +5,16 @@
   height: 100vh;
   width: 100vw;
 
+  --content-padding: 3rem;
+  --title-fontsize: 5rem;
+
   & > *:nth-child(3) {
     grid-column: 2;
     grid-row: 3 / 8;
   }
 
   & > * {
-    padding: 3rem;
+    padding: var(--content-padding);
   }
 
   h1,
@@ -27,14 +30,33 @@
     }
   }
 }
+@media screen and (max-width: 1300px) {
+  .container {
+    --title-fontsize: 3rem;
+    --content-padding: 1rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    --title-fontsize: 2rem;
+    --content-padding: 1rem;
+  }
+}
 
 .poster {
   grid-column: 1;
   grid-row: 1/8;
 }
+@media screen and (max-width: 900px) {
+  .poster {
+    height: 50vh;
+  }
+}
 
 .title {
   grid-column: 2;
   grid-row: 2;
-  font-size: 5rem;
+  font-size: var(--title-fontsize);
 }
