@@ -4,6 +4,19 @@ import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyB3aMZhbvdWbPpDJsB7sfp45_WBbMM3RT8",
+  authDomain: "mraufoon.firebaseapp.com",
+  projectId: "mraufoon",
+  storageBucket: "mraufoon.appspot.com",
+  messagingSenderId: "303052968157",
+  appId: "1:303052968157:web:050256bc7591ea71a70b34",
+};
+
+// Initialize Firebase
+initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
