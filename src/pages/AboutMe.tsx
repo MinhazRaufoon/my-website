@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 export function AboutMe() {
   return (
     <FancyCard
+      posterUrl="https://i.imgur.com/wzFfnW3.jpg"
       actions={
         <>
           <a
