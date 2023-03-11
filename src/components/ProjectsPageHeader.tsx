@@ -1,19 +1,29 @@
-import { Fragment, useState, useCallback } from "react"
-import styles from "../styles/ProjectsPageHeader.module.scss"
+import { Fragment, useState, useCallback } from "react";
+import styles from "../styles/ProjectsPageHeader.module.scss";
 import { ProjectSkillFilter } from "./ProjectSkillFilter";
 
-type ProjectTypeFilter = "all" | "web-app" | "desktop-app" | "embedded-software"
+type ProjectTypeFilter =
+  | "all"
+  | "web-app"
+  | "desktop-app"
+  | "embedded-software";
 
-function ProjectTypeFilterSelect(props : { value: ProjectTypeFilter, setTypeFilter: Function }) {
+function ProjectTypeFilterSelect(props: {
+  value: ProjectTypeFilter;
+  setTypeFilter: Function;
+}) {
   const { value, setTypeFilter } = props;
   return (
-    <select value={value} onChange={e => setTypeFilter(e.target.value as ProjectTypeFilter)}>
+    <select
+      value={value}
+      onChange={(e) => setTypeFilter(e.target.value as ProjectTypeFilter)}
+    >
       <option value={"all"}>All</option>
       <option value={"desktop-app"}>Desktop app</option>
       <option value={"web-app"}>Web app</option>
       <option value={"embedded-software"}>Embedded software</option>
     </select>
-  )
+  );
 }
 
 const allSkills = [
@@ -25,8 +35,8 @@ const allSkills = [
   "C++",
   "C",
   "Python",
-  "CUDA"
-]
+  "CUDA",
+];
 
 export function ProjectsPageHeader() {
   const [isFilterPanelVisible, setFilterPanelVisible] = useState<boolean>(true);
@@ -34,11 +44,11 @@ export function ProjectsPageHeader() {
   const [skillFilters, setSkillFilters] = useState<string[]>(["React.js"]);
 
   const addSkillFilter = useCallback((skill: string) => {
-    setSkillFilters(prev => [...prev, skill]);
-  }, [])
+    setSkillFilters((prev) => [...prev, skill]);
+  }, []);
 
   const removeSkillFilter = useCallback((skill: string) => {
-    setSkillFilters(prev => {
+    setSkillFilters((prev) => {
       const indexOfFilterToDelete = prev.indexOf(skill);
 
       if (indexOfFilterToDelete > -1) {
@@ -49,27 +59,41 @@ export function ProjectsPageHeader() {
 
       return prev;
     });
-  }, [])
-  
+  }, []);
+
   return (
     <div className={styles.container}>
-      {
-        isFilterPanelVisible && <Fragment>
-          <ProjectTypeFilterSelect value={typeFilter} setTypeFilter={setTypeFilter}/>
+      {isFilterPanelVisible && (
+        <Fragment>
+          <ProjectTypeFilterSelect
+            value={typeFilter}
+            setTypeFilter={setTypeFilter}
+          />
 
           <div className={styles.skillFilterPanel}>
-            {
-              allSkills.map(skill => {
-                return skillFilters.includes(skill) 
-                  ? <ProjectSkillFilter key={skill} value={skill} isSelected={true} onClick={() => removeSkillFilter(skill)}/>
-                  : <ProjectSkillFilter key={skill} value={skill} isSelected={false} onClick={() => addSkillFilter(skill)}/>;
-              })
-            }
+            {allSkills.map((skill) => {
+              return skillFilters.includes(skill) ? (
+                <ProjectSkillFilter
+                  key={skill}
+                  value={skill}
+                  isSelected={true}
+                  onClick={() => removeSkillFilter(skill)}
+                />
+              ) : (
+                <ProjectSkillFilter
+                  key={skill}
+                  value={skill}
+                  isSelected={false}
+                  onClick={() => addSkillFilter(skill)}
+                />
+              );
+            })}
           </div>
-
         </Fragment>
-      }
-      <button onClick={() => setFilterPanelVisible(prev => !prev)}>{isFilterPanelVisible ? "Hide" : "Show"} filters</button>
+      )}
+      <button onClick={() => setFilterPanelVisible((prev) => !prev)}>
+        {isFilterPanelVisible ? "Hide" : "Show"} filters
+      </button>
     </div>
-  )
+  );
 }

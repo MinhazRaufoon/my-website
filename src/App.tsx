@@ -8,8 +8,8 @@ function App() {
     <>
       <FancyHeader />
       <Routes>
-        <Route path="projects" element={<Projects/>}/>
-        <Route path="*" element={<AboutMe />}/>
+        <Route path="projects" element={<Projects />} />
+        <Route path="*" element={<AboutMe />} />
       </Routes>
     </>
   );
