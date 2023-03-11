@@ -1,12 +1,7 @@
-import { Fragment, useState, useCallback } from "react";
+import { Fragment, useState } from "react";
 import styles from "../styles/ProjectsPageHeader.module.scss";
+import { ProjectTypeFilter } from "../types";
 import { ProjectSkillFilter } from "./ProjectSkillFilter";
-
-type ProjectTypeFilter =
-  | "all"
-  | "web-app"
-  | "desktop-app"
-  | "embedded-software";
 
 function ProjectTypeFilterSelect(props: {
   value: ProjectTypeFilter;
@@ -38,28 +33,24 @@ const allSkills = [
   "CUDA",
 ];
 
-export function ProjectsPageHeader() {
+type Props = {
+  typeFilter: ProjectTypeFilter;
+  setTypeFilter: Function;
+  skillFilters: string[];
+  addSkillFilter: Function;
+  removeSkillFilter: Function;
+};
+
+export function ProjectsPageHeader(props: Props) {
+  const {
+    typeFilter,
+    setTypeFilter,
+    skillFilters,
+    addSkillFilter,
+    removeSkillFilter,
+  } = props;
+
   const [isFilterPanelVisible, setFilterPanelVisible] = useState<boolean>(true);
-  const [typeFilter, setTypeFilter] = useState<ProjectTypeFilter>("all");
-  const [skillFilters, setSkillFilters] = useState<string[]>(["React.js"]);
-
-  const addSkillFilter = useCallback((skill: string) => {
-    setSkillFilters((prev) => [...prev, skill]);
-  }, []);
-
-  const removeSkillFilter = useCallback((skill: string) => {
-    setSkillFilters((prev) => {
-      const indexOfFilterToDelete = prev.indexOf(skill);
-
-      if (indexOfFilterToDelete > -1) {
-        const result = [...prev];
-        result.splice(indexOfFilterToDelete, 1);
-        return result;
-      }
-
-      return prev;
-    });
-  }, []);
 
   return (
     <div className={styles.container}>
