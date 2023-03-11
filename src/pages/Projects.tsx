@@ -1,3 +1,7 @@
+import { ProjectsPageHeader } from "../components/ProjectsPageHeader";
+
 export function Projects() {
-  return <div>hey</div>
+  return <>
+    <ProjectsPageHeader/>
+  </>
 }
