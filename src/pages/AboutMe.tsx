@@ -5,10 +5,15 @@ import { ReactComponent as XingIcon } from "../assets/xing.svg";
 import { ReactComponent as GithubIcon } from "../assets/github.svg";
 import { NavLink } from "react-router-dom";
 
+const profilePictures = [
+  "https://i.imgur.com/v6LxUyK.jpg",
+  "https://i.imgur.com/wzFfnW3.jpg"
+]
+
 export function AboutMe() {
   return (
     <FancyCard
-      posterUrl="https://i.imgur.com/wzFfnW3.jpg"
+      posterUrl={profilePictures[0]}
       actions={
         <>
           <a
