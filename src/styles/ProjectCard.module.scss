@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+  height: 600px;
+  width: 400px;
+  border: 1px solid lightgray;
+
+  & > * {
+    margin-bottom: 1rem;
+  }
+}
+
+.projectCategoryLabel {
+  background-color: #f0d020;
+  margin-bottom: unset;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.projectImage {
+  height: 50%;
+  background-color: red;
+  width: 100%;
+  background-size: cover;
+}
+
+.skills {
+  margin-top: 1rem;
+
+  label {
+    padding: 5px;
+    background-color: white;
+    margin: 2px;
+  }
+}
+
+.actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  a,
+  button {
+    height: 3rem;
+    padding: 5px;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+  }
+}

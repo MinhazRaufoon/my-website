@@ -15,7 +15,8 @@ function ProjectTypeFilterSelect(props: {
     >
       <option value={"all"}>All</option>
       <option value={"desktop-app"}>Desktop app</option>
-      <option value={"web-app"}>Web app</option>
+      <option value={"website"}>Website</option>
+      <option value={"full-stack-web"}>Full-stack web</option>
       <option value={"embedded-software"}>Embedded software</option>
     </select>
   );

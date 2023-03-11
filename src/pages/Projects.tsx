@@ -1,6 +1,8 @@
 import { useCallback, useState } from "react";
+import { ProjectCard } from "../components/ProjectCard";
 import { ProjectsPageHeader } from "../components/ProjectsPageHeader";
 import { ProjectTypeFilter } from "../types";
+import styles from "../styles/Projects.module.scss";
 
 export function Projects() {
   const [typeFilter, setTypeFilter] = useState<ProjectTypeFilter>("all");
@@ -31,6 +33,9 @@ export function Projects() {
         addSkillFilter={addSkillFilter}
         removeSkillFilter={removeSkillFilter}
       />
+      <div className={styles.projects}>
+        <ProjectCard />
+      </div>
     </>
   );
 }
