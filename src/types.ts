@@ -21,4 +21,5 @@ export type Project = {
   subtitle: string;
   links: ProjectLink[];
   skills: string[];
+  importance: number;
 }

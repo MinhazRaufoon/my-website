@@ -5,7 +5,9 @@
   width: 600px;
   height: 300px;
   gap: 1rem;
-  box-shadow: 0 0 2px lightgray;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .projectCategoryLabel {
@@ -33,6 +35,10 @@
 }
 
 .skills {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
   label {
     padding: 2px;
     background-color: #fff68f;

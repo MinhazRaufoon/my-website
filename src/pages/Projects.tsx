@@ -50,7 +50,13 @@ export function Projects() {
   // }, []);
 
   useEffect(() => {
-    loadProjects().then((projects) => setProjects(projects));
+    loadProjects().then((projects) =>
+      setProjects(
+        projects.sort((a: Project, b: Project) =>
+          a.importance < b.importance ? 1 : -1
+        )
+      )
+    );
   }, []);
 
   return (
