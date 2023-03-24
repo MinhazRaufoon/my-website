@@ -13,6 +13,8 @@ const firebaseConfig = {
   storageBucket: "minraufoon.appspot.com",
   messagingSenderId: "842181755497",
   appId: "1:842181755497:web:1287362a5c0e26c93158f8",
+  databaseURL:
+    "https://minraufoon-default-rtdb.europe-west1.firebasedatabase.app",
 };
 
 // Initialize Firebase
@@ -23,11 +25,9 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

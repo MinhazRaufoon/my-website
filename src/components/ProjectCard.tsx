@@ -2,49 +2,54 @@ import styles from "../styles/ProjectCard.module.scss";
 import { ReactComponent as GithubIcon } from "../assets/github.svg";
 import { ReactComponent as WebsiteIcon } from "../assets/website.svg";
 import { ReactComponent as YoutubeIcon } from "../assets/youtube.svg";
+import { Project } from "../types";
 
-export function ProjectCard() {
+type PropType = {
+  project: Project;
+};
+
+const projectCategoryColorMap: any = {
+  "desktop-app": "#d26d54",
+};
+
+export function ProjectCard(props: PropType) {
+  const { project } = props;
+
   return (
     <div className={styles.container}>
-      <h3 className={styles.projectCategoryLabel} style={{backgroundColor: "#333"}}>Desktop app</h3>
       <div
         className={styles.projectImage}
         style={{
-          backgroundImage: `url(https://i.imgur.com/72nlCH7.jpg)`,
+          backgroundImage: `url(${project.poster})`,
         }}
       />
-      <h1>FTP server and client</h1>
-      <h3>Share files with FTP</h3>
+      <div className={styles.projectDetails}>
+        <h3
+          className={styles.projectCategoryLabel}
+          style={{ color: projectCategoryColorMap[project.category] }}
+        >
+          {project.category}
+        </h3>
+        <h2>{project.title}</h2>
+        <h3>{project.subtitle}</h3>
 
-      <div className={styles.skills}>
-        {["Java"].map((skill) => (
-          <label key={skill}>{skill}</label>
-        ))}
-      </div>
+        <div className={styles.skills}>
+          {project.skills.map((skill) => (
+            <label key={skill}>{skill}</label>
+          ))}
+        </div>
 
-      <div className={styles.actions}>
-        <a
-          href="https://github.com/MinhazRaufoon/Simple-FTP-Application"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <GithubIcon />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/raufoon/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <WebsiteIcon />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/raufoon/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <YoutubeIcon />
-        </a>
-        <button>More</button>
+        <div className={styles.actions}>
+          {project.links.map((link) => (
+            <a key={link.type} href={link.url} target="_blank" rel="noreferrer">
+              {link.type === "github" && <GithubIcon />}
+              {link.type === "website" && <WebsiteIcon />}
+              {link.type === "youtube" && <YoutubeIcon />}
+            </a>
+          ))}
+
+          <button>More</button>
+        </div>
       </div>
     </div>
   );
