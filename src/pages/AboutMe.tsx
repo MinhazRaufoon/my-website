@@ -59,7 +59,7 @@ export function AboutMe() {
         <div className={styles.buttonSet}>
           <NavLink to="/projects">View my projects</NavLink>
           <a
-            href="https://firebasestorage.googleapis.com/v0/b/mraufoon.appspot.com/o/Lebenslauf.pdf?alt=media&token=4507f39e-bc2c-4660-b39d-b1c216fb88a1"
+            href="https://firebasestorage.googleapis.com/v0/b/minraufoon.appspot.com/o/Lebenslauf___Minhaz_Raufoon___latest.pdf?alt=media&token=2303e79b-1e4a-4761-af0c-aa1a830c5f00"
             download={"Lebenslauf_Minhaz_Raufoon.pdf"}
             target="_blank"
             rel="noreferrer"
