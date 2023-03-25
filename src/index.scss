@@ -8,6 +8,7 @@ body {
   --bgcolor: #fafafa;
   --bgcolor-highlight: #f1f1f1;
   --brdcolor: lightgray;
+  max-width: 100vw;
 }
 
 code {
@@ -26,13 +27,14 @@ code {
 #root {
   min-height: 100vh;
   width: 100vw;
+  max-width: 100vw;
   padding: 0;
   margin: 0;
 }
 
 button,
-a, 
-input, 
+a,
+input,
 select {
   margin: 0;
   padding: 1rem 1.5rem 1rem 1.5rem;

@@ -3,32 +3,31 @@ import { ProjectCard } from "../components/ProjectCard";
 import { ProjectsPageHeader } from "../components/ProjectsPageHeader";
 import { Project, ProjectTypeFilter } from "../types";
 import styles from "../styles/Projects.module.scss";
-import { getDatabase, ref, onValue } from "firebase/database";
+import { getDatabase, ref, child, get } from "firebase/database";
 
 async function loadProjects() {
   const projectsFromSS = sessionStorage.getItem("projects");
 
   if (projectsFromSS) return JSON.parse(projectsFromSS);
 
-  return new Promise((res, rej) => {
-    const db = getDatabase();
-    const projectsRef = ref(db, "v1/projects");
+  const dbRef = ref(getDatabase());
 
-    onValue(projectsRef, (snapshot) => {
+  return get(child(dbRef, `v1/projects`)).then((snapshot) => {
+    if (snapshot.exists()) {
       const projectsData = snapshot.val();
       sessionStorage.setItem(
         "projects",
         JSON.stringify(Object.values(projectsData))
       );
-      res(Object.values(projectsData));
-    });
+      return Object.values(projectsData);
+    } else {
+      throw Error("No data");
+    }
   });
 }
 
 export function Projects() {
-  const [projects, setProjects] = useState<Project[]>(
-    JSON.parse(sessionStorage.getItem("projects") || "[]") || []
-  );
+  const [projects, setProjects] = useState<Project[]>([]);
 
   // const [typeFilter, setTypeFilter] = useState<ProjectTypeFilter>("all");
   // const [skillFilters, setSkillFilters] = useState<string[]>([]);
@@ -61,7 +60,6 @@ export function Projects() {
 
   return (
     <>
-      <br />
       {/* <ProjectsPageHeader
         typeFilter={typeFilter}
         setTypeFilter={setTypeFilter}
