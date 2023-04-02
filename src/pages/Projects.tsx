@@ -1,7 +1,6 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ProjectCard } from "../components/ProjectCard";
-import { ProjectsPageHeader } from "../components/ProjectsPageHeader";
-import { Project, ProjectTypeFilter } from "../types";
+import { Project } from "../types";
 import styles from "../styles/Projects.module.scss";
 import { getDatabase, ref, child, get } from "firebase/database";
 
@@ -29,25 +28,6 @@ async function loadProjects() {
 export function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
 
-  // const [typeFilter, setTypeFilter] = useState<ProjectTypeFilter>("all");
-  // const [skillFilters, setSkillFilters] = useState<string[]>([]);
-
-  // const addSkillFilter = useCallback((skill: string) => {
-  //   setSkillFilters((prev) => [...prev, skill]);
-  // }, []);
-
-  // const removeSkillFilter = useCallback((skill: string) => {
-  //   setSkillFilters((prev) => {
-  //     const indexOfFilterToDelete = prev.indexOf(skill);
-  //     if (indexOfFilterToDelete > -1) {
-  //       const result = [...prev];
-  //       result.splice(indexOfFilterToDelete, 1);
-  //       return result;
-  //     }
-  //     return prev;
-  //   });
-  // }, []);
-
   useEffect(() => {
     loadProjects().then((projects) =>
       setProjects(
@@ -59,19 +39,10 @@ export function Projects() {
   }, []);
 
   return (
-    <>
-      {/* <ProjectsPageHeader
-        typeFilter={typeFilter}
-        setTypeFilter={setTypeFilter}
-        skillFilters={skillFilters}
-        addSkillFilter={addSkillFilter}
-        removeSkillFilter={removeSkillFilter}
-      /> */}
-      <div className={styles.projects}>
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </div>
-    </>
+    <div className={styles.projects}>
+      {projects.map((project) => (
+        <ProjectCard key={project.id} project={project} />
+      ))}
+    </div>
   );
 }
