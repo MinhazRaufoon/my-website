@@ -1,3 +1,5 @@
+import archImg from "../../assets/raspnet/architecture.png";
+
 export function RaspnetProject() {
   return (
     <>
@@ -18,70 +20,14 @@ export function RaspnetProject() {
         token-ring infrastructure.
       </p>
 
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
-      <p>X</p>
+      <h2>Software architecture</h2>
+      <img src={archImg} alt="Raspnet software architecture" />
+
+      <h2>Hardware requirements</h2>
+      <ul>
+        <li>Raspberry Pi B+</li>
+        <li>Gertboard v2.0 with ATMega 328p microcontroller</li>
+      </ul>
     </>
   );
 }
