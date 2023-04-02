@@ -16,6 +16,12 @@ export function ProjectModal(props: Props) {
       onClick={onClickOutside as MouseEventHandler}
     >
       <div className={styles.inner} onClick={(e) => e.stopPropagation()}>
+        <button
+          className={styles.closeButton}
+          onClick={onClickOutside as MouseEventHandler}
+        >
+          X
+        </button>
         {projectId === "raspnet" && <RaspnetProject />}
       </div>
     </div>
