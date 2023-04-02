@@ -2,6 +2,7 @@ import styles from "../styles/ProjectCard.module.scss";
 import { ReactComponent as GithubIcon } from "../assets/github.svg";
 import { ReactComponent as WebsiteIcon } from "../assets/website.svg";
 import { ReactComponent as YoutubeIcon } from "../assets/youtube.svg";
+import { ReactComponent as MoreIcon } from "../assets/right-arrow.svg";
 import { Project } from "../types";
 
 type PropType = {
@@ -51,7 +52,9 @@ export function ProjectCard(props: PropType) {
             </a>
           ))}
 
-          {/* <button>More</button> */}
+          <button>
+            <MoreIcon />
+          </button>
         </div>
       </div>
     </div>
