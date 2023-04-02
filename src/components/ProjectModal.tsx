@@ -12,6 +12,31 @@ type Props = {
 export function ProjectModal(props: Props) {
   const { onClickOutside, project } = props;
 
+  const content =
+    project.id === "raspnet" ? (
+      <RaspnetProject project={project} />
+    ) : project.id === "ftp-server-and-client" ? (
+      <FtpProject project={project} />
+    ) : (
+      <div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        "Details will be updated soon"
+      </div>
+    );
+
   return (
     <div
       className={styles.container}
@@ -24,10 +49,7 @@ export function ProjectModal(props: Props) {
         >
           X
         </button>
-        {project.id === "raspnet" && <RaspnetProject project={project} />}
-        {project.id === "ftp-server-and-client" && (
-          <FtpProject project={project} />
-        )}
+        {content}
       </div>
     </div>
   );
