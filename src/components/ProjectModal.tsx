@@ -24,6 +24,7 @@ export function ProjectModal(props: Props) {
           X
         </button>
         {project.id === "raspnet" && <RaspnetProject project={project} />}
+        {project.id !== "raspnet" && <b>The page is under construction</b>}
       </div>
     </div>
   );
