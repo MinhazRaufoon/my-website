@@ -2,6 +2,7 @@ import { RaspnetProject } from "./projects/RaspnetProject";
 import styles from "../styles/ProjectModal.module.scss";
 import { MouseEventHandler } from "react";
 import { Project } from "../types";
+import { FtpProject } from "./projects/FtpProject";
 
 type Props = {
   onClickOutside: Function;
@@ -24,7 +25,9 @@ export function ProjectModal(props: Props) {
           X
         </button>
         {project.id === "raspnet" && <RaspnetProject project={project} />}
-        {project.id !== "raspnet" && <b>The page is under construction</b>}
+        {project.id === "ftp-server-and-client" && (
+          <FtpProject project={project} />
+        )}
       </div>
     </div>
   );

@@ -22,8 +22,9 @@ export function RaspnetProject(props: PropType) {
         >
           lab tasks
         </a>{" "}
-        for the course "Embedded Software Lab (565040)". The goal of this
-        project is to implement Layer 1 to Layer 4 of the{" "}
+        for the course "Embedded Software Lab (565040)" in Faculty of Computer
+        Science, TU Chemnitz in 2021. The goal of this project is to implement
+        Layer 1 to Layer 4 of the{" "}
         <a
           href="https://osg.informatik.tu-chemnitz.de/lehre/emblab/protocol.pdf"
           target="_blank"
