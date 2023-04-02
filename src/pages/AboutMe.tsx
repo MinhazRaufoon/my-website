@@ -48,7 +48,7 @@ export function AboutMe() {
 
         <h2 style={{ lineHeight: "3rem" }}>
           I am good at <span>Automotive Software Development</span>, and{" "}
-          <span>Full-Stack Development.</span>
+          <span>Full-Stack Web Development.</span>
         </h2>
 
         <h4>
