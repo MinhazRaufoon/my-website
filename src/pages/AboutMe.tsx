@@ -47,8 +47,7 @@ export function AboutMe() {
         <h2>I am a software engineer & student.</h2>
 
         <h2 style={{ lineHeight: "3rem" }}>
-          I am good at <span>Automotive Software Development</span>,{" "}
-          <span>Radar Signal Processing</span>, and{" "}
+          I am good at <span>Automotive Software Development</span>, and{" "}
           <span>Full-Stack Development.</span>
         </h2>
 
