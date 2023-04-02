@@ -1,14 +1,15 @@
 import { RaspnetProject } from "./projects/RaspnetProject";
 import styles from "../styles/ProjectModal.module.scss";
 import { MouseEventHandler } from "react";
+import { Project } from "../types";
 
 type Props = {
-  projectId: string;
   onClickOutside: Function;
+  project: Project;
 };
 
 export function ProjectModal(props: Props) {
-  const { projectId, onClickOutside } = props;
+  const { onClickOutside, project } = props;
 
   return (
     <div
@@ -22,7 +23,7 @@ export function ProjectModal(props: Props) {
         >
           X
         </button>
-        {projectId === "raspnet" && <RaspnetProject />}
+        {project.id === "raspnet" && <RaspnetProject project={project} />}
       </div>
     </div>
   );

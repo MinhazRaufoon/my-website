@@ -28,9 +28,7 @@ async function loadProjects() {
 
 export function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
-  const [focusedProjectId, setFocusedProjectId] = useState<string | null>(
-    "raspnet"
-  );
+  const [focusedProject, setFocusedProject] = useState<Project | null>(null);
 
   useEffect(() => {
     loadProjects().then((projects) =>
@@ -48,13 +46,13 @@ export function Projects() {
         <ProjectCard
           key={project.id}
           project={project}
-          onClickMore={() => setFocusedProjectId(project.id)}
+          onClickMore={() => setFocusedProject(project)}
         />
       ))}
-      {focusedProjectId !== null && (
+      {focusedProject !== null && (
         <ProjectModal
-          projectId={focusedProjectId}
-          onClickOutside={() => setFocusedProjectId(null)}
+          project={focusedProject}
+          onClickOutside={() => setFocusedProject(null)}
         />
       )}
     </div>
