@@ -9,6 +9,21 @@ body {
   --bgcolor-highlight: #f1f1f1;
   --brdcolor: lightgray;
   max-width: 100vw;
+
+  scrollbar-color: #999 #333;
+
+  &::-webkit-scrollbar {
+    width: 10px; /* Mostly for vertical scrollbars */
+    height: 10px; /* Mostly for horizontal scrollbars */
+  }
+  &::-webkit-scrollbar-thumb {
+    /* Foreground */
+    background: #678286;
+  }
+  &::-webkit-scrollbar-track {
+    /* Background */
+    background: lightgray;
+  }
 }
 
 code {
@@ -63,4 +78,16 @@ h5 {
 svg {
   width: 2rem;
   height: 2rem;
+}
+
+p {
+  a {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-transform: none;
+    text-decoration: underline;
+    color: blue;
+  }
 }

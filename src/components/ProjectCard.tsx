@@ -4,9 +4,11 @@ import { ReactComponent as WebsiteIcon } from "../assets/website.svg";
 import { ReactComponent as YoutubeIcon } from "../assets/youtube.svg";
 import { ReactComponent as MoreIcon } from "../assets/right-arrow.svg";
 import { Project } from "../types";
+import { MouseEventHandler } from "react";
 
 type PropType = {
   project: Project;
+  onClickMore: Function;
 };
 
 const projectCategoryColorMap: any = {
@@ -17,7 +19,7 @@ const projectCategoryColorMap: any = {
 };
 
 export function ProjectCard(props: PropType) {
-  const { project } = props;
+  const { project, onClickMore } = props;
 
   return (
     <div className={styles.container}>
@@ -52,7 +54,7 @@ export function ProjectCard(props: PropType) {
             </a>
           ))}
 
-          <button>
+          <button onClick={onClickMore as MouseEventHandler}>
             <MoreIcon />
           </button>
         </div>

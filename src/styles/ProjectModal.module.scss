@@ -1,0 +1,46 @@
+.container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  background-color: rgba($color: #000000, $alpha: 0.2);
+  margin: 0;
+  overflow: auto;
+  scrollbar-color: #999 #333;
+  cursor: pointer;
+
+  &::-webkit-scrollbar {
+    width: 10px; /* Mostly for vertical scrollbars */
+    height: 10px; /* Mostly for horizontal scrollbars */
+  }
+  &::-webkit-scrollbar-thumb {
+    /* Foreground */
+    background: #746cff;
+  }
+  &::-webkit-scrollbar-track {
+    /* Background */
+    background: #d8e9f7;
+  }
+}
+
+.inner {
+  width: 650px;
+  border-left: 1px solid lightgray;
+  max-width: 100vw;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+
+  cursor: default;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}

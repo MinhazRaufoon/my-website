@@ -3,6 +3,7 @@ import { ProjectCard } from "../components/ProjectCard";
 import { Project } from "../types";
 import styles from "../styles/Projects.module.scss";
 import { getDatabase, ref, child, get } from "firebase/database";
+import { ProjectModal } from "../components/ProjectModal";
 
 async function loadProjects() {
   const projectsFromSS = sessionStorage.getItem("projects");
@@ -27,6 +28,9 @@ async function loadProjects() {
 
 export function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
+  const [focusedProjectId, setFocusedProjectId] = useState<string | null>(
+    "raspnet"
+  );
 
   useEffect(() => {
     loadProjects().then((projects) =>
@@ -41,8 +45,18 @@ export function Projects() {
   return (
     <div className={styles.projects}>
       {projects.map((project) => (
-        <ProjectCard key={project.id} project={project} />
+        <ProjectCard
+          key={project.id}
+          project={project}
+          onClickMore={() => setFocusedProjectId(project.id)}
+        />
       ))}
+      {focusedProjectId !== null && (
+        <ProjectModal
+          projectId={focusedProjectId}
+          onClickOutside={() => setFocusedProjectId(null)}
+        />
+      )}
     </div>
   );
 }

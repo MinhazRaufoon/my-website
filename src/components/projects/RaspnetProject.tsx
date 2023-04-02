@@ -17,6 +17,71 @@ export function RaspnetProject() {
         , a communication protocol for Raspberry Pi in a unidirectional
         token-ring infrastructure.
       </p>
+
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
+      <p>X</p>
     </>
   );
 }
