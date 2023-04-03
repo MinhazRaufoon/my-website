@@ -4,11 +4,10 @@ import { ReactComponent as WebsiteIcon } from "../assets/website.svg";
 import { ReactComponent as YoutubeIcon } from "../assets/youtube.svg";
 import { ReactComponent as MoreIcon } from "../assets/right-arrow.svg";
 import { Project } from "../types";
-import { MouseEventHandler } from "react";
+import { useSearchParams } from "react-router-dom";
 
 type PropType = {
   project: Project;
-  onClickMore: Function;
 };
 
 const projectCategoryColorMap: any = {
@@ -19,7 +18,8 @@ const projectCategoryColorMap: any = {
 };
 
 export function ProjectCard(props: PropType) {
-  const { project, onClickMore } = props;
+  const { project } = props;
+  const [search, setSearch] = useSearchParams();
 
   return (
     <div className={styles.container}>
@@ -54,7 +54,7 @@ export function ProjectCard(props: PropType) {
             </a>
           ))}
 
-          <button onClick={onClickMore as MouseEventHandler}>
+          <button onClick={() => setSearch({ focus: project.id })}>
             <MoreIcon />
           </button>
         </div>

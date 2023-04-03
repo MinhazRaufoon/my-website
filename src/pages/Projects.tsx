@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ProjectCard } from "../components/ProjectCard";
 import { Project } from "../types";
 import styles from "../styles/Projects.module.scss";
 import { getDatabase, ref, child, get } from "firebase/database";
 import { ProjectModal } from "../components/ProjectModal";
+import { useSearchParams } from "react-router-dom";
 
 async function loadProjects() {
   const projectsFromSS = sessionStorage.getItem("projects");
@@ -30,6 +31,8 @@ export function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [focusedProject, setFocusedProject] = useState<Project | null>(null);
 
+  const [search, setSearchParams] = useSearchParams();
+
   useEffect(() => {
     loadProjects().then((projects) =>
       setProjects(
@@ -40,20 +43,25 @@ export function Projects() {
     );
   }, []);
 
+  useEffect(() => {
+    if (search.has("focus")) {
+      const focusedProject = projects.find((p) => p.id === search.get("focus"));
+      if (focusedProject) setFocusedProject(focusedProject);
+    }
+  }, [search, projects]);
+
+  const clearSearch = useCallback(() => {
+    setSearchParams({});
+    setFocusedProject(null);
+  }, [setSearchParams]);
+
   return (
     <div className={styles.projects}>
       {projects.map((project) => (
-        <ProjectCard
-          key={project.id}
-          project={project}
-          onClickMore={() => setFocusedProject(project)}
-        />
+        <ProjectCard key={project.id} project={project} />
       ))}
       {focusedProject !== null && (
-        <ProjectModal
-          project={focusedProject}
-          onClickOutside={() => setFocusedProject(null)}
-        />
+        <ProjectModal project={focusedProject} onClickOutside={clearSearch} />
       )}
     </div>
   );
