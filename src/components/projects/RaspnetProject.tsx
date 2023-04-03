@@ -123,7 +123,7 @@ export function RaspnetProject(props: PropType) {
               <li>Save the file</li>
             </ul>
           </li>
-          <li>Close this project (email me for source code)</li>
+          <li>Clone this project (email me for source code)</li>
         </ul>
       </p>
 
@@ -190,10 +190,15 @@ export function RaspnetProject(props: PropType) {
             <br />
             <br />
             <code>A120</code>
+            <br />
             <code>&gt;OK</code>
+            <br />
             <code>F00001</code>
+            <br />
             <code>&gt;OK</code>
+            <br />
             <code>T00001</code>
+            <br />
             <code>&gt;OK</code>
           </li>
           <li>
@@ -207,6 +212,7 @@ export function RaspnetProject(props: PropType) {
             <br />
             <br />
             <code>S</code>
+            <br />
             <code>&gt;OK</code>
           </li>
           <li>
@@ -221,8 +227,11 @@ export function RaspnetProject(props: PropType) {
             <br />
             <br />
             <code>P1-120-005-HELLO</code>
+            <br />
             <code>&gt;OK</code>
+            <br />
             <code>...</code>
+            <br />
             <code>SUCCESS0</code>
           </li>
           <li>
