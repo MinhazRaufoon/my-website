@@ -11,10 +11,11 @@ type PropType = {
 };
 
 const projectCategoryColorMap: any = {
-  "desktop-app": "#ff7f50",
+  "desktop-app": "#FF4703",
   "full-stack-web": "#9900ff",
   website: "#05c4bc",
-  "embedded-software": "#ff5a68",
+  "embedded-software": "#DC143C",
+  "R & D": "#065535",
 };
 
 export function ProjectCard(props: PropType) {
