@@ -4,6 +4,7 @@ import { MouseEventHandler } from "react";
 import { Project } from "../types";
 import { FtpProject } from "./projects/FtpProject";
 import BscThesisProject from "./projects/BscThesisProject";
+import GvisWeatherProject from "./projects/GvisWeatherProject";
 
 type Props = {
   onClickOutside: Function;
@@ -20,6 +21,8 @@ export function ProjectModal(props: Props) {
       <FtpProject project={project} />
     ) : project.id === "bsc-thesis" ? (
       <BscThesisProject project={project} />
+    ) : project.id === "gvis" ? (
+      <GvisWeatherProject project={project} />
     ) : (
       <div>
         <br />
