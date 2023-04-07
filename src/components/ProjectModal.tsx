@@ -3,6 +3,7 @@ import styles from "../styles/ProjectModal.module.scss";
 import { MouseEventHandler } from "react";
 import { Project } from "../types";
 import { FtpProject } from "./projects/FtpProject";
+import BscThesisProject from "./projects/BscThesisProject";
 
 type Props = {
   onClickOutside: Function;
@@ -17,6 +18,8 @@ export function ProjectModal(props: Props) {
       <RaspnetProject project={project} />
     ) : project.id === "ftp-server-and-client" ? (
       <FtpProject project={project} />
+    ) : project.id === "bsc-thesis" ? (
+      <BscThesisProject project={project} />
     ) : (
       <div>
         <br />
