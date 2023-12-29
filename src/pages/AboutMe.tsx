@@ -8,12 +8,15 @@ import { NavLink } from "react-router-dom";
 const profilePictures = [
   "https://i.imgur.com/v6LxUyK.jpg",
   "https://i.imgur.com/wzFfnW3.jpg",
+  "https://i.imgur.com/Ch01bT5.jpg",
+  "https://i.imgur.com/Z3WzXpX.jpg",
+  "https://i.imgur.com/eDROXB3.jpg"
 ];
 
 export function AboutMe() {
   return (
     <FancyCard
-      posterUrl={profilePictures[0]}
+      posterUrl={profilePictures[2]}
       actions={
         <>
           <a
@@ -43,7 +46,7 @@ export function AboutMe() {
         </>
       }
     >
-      <div className={styles.welcomeDetails}>
+      <div className={styles.welcomeDetails} >
         <h2>I am an Automotive Software Engineer</h2>
 
         <h3 style={{ lineHeight: "3rem" }}>
