@@ -44,12 +44,12 @@ export function AboutMe() {
       }
     >
       <div className={styles.welcomeDetails}>
-        <h2>I am a software engineer & student.</h2>
+        <h2>I am an Automotive Software Engineer</h2>
 
-        <h2 style={{ lineHeight: "3rem" }}>
-          I am good at <span>Automotive Software Development</span>, and{" "}
-          <span>Full-Stack Web Development</span>.
-        </h2>
+        <h3 style={{ lineHeight: "3rem" }}>
+          I have good knowledge and professional experience in parallel programming with <span>CUDA</span> and <span>C++</span>. 
+          At present, I am working in the <span>automotive</span> industry as a software engineer for <span>radar</span> signal processing.
+        </h3>
 
         <h4>
           Want a conversation? Email me at <b>minhaz.raufoon.1567@gmail.com</b>
