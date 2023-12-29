@@ -47,9 +47,9 @@ export function AboutMe() {
       }
     >
       <div className={styles.welcomeDetails} >
-        <h2>I am an Automotive Software Engineer</h2>
+        <h2>I am an Automotive Software Engineer.</h2>
 
-        <h3 style={{ lineHeight: "3rem" }}>
+        <h3 style={{ lineHeight: "180%" }}>
           I have good knowledge and professional experience in parallel programming with <span>CUDA</span> and <span>C++</span>. 
           At present, I am working in the <span>automotive</span> industry as a software engineer for <span>radar</span> signal processing.
         </h3>
